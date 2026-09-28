@@ -1,0 +1,36 @@
+{
+  "name": "voicedesk",
+  "private": true,
+  "version": "0.5.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "check": "tsc -b --pretty false",
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "powershell -ExecutionPolicy Bypass -File scripts/ensure-asr-sidecar.ps1 && powershell -ExecutionPolicy Bypass -File scripts/ensure-llm-runtime.ps1 && tauri build",
+    "rust:check": "cargo check --manifest-path src-tauri/Cargo.toml",
+    "rust:test": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "asr:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-asr.ps1",
+    "asr:test": ".venv-asr\\Scripts\\python.exe -m pytest engines/asr/tests",
+    "asr:build": "powershell -ExecutionPolicy Bypass -File scripts/build-asr-sidecar.ps1",
+    "llm:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-llm.ps1"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-dialog": "^2.7.3",
+    "lucide-react": "^1.48.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.1"
+  }
+}
