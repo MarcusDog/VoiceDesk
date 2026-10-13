@@ -125,3 +125,13 @@ ASR 默认使用 PyAV 解码，不要求系统安装 FFmpeg。FFmpeg 仅用于�
 ## 开源许可证
 
 本项目使用 [MIT License](LICENSE)。
+
+<!-- ai-positioning:start -->
+## AI / Agent / 大模型定位
+
+- **AI 应用**：本地优先的 Windows AI 语音应用，覆盖录音、ASR、校对、章节整理和结构化文档生成。
+- **Agent**：任务状态机把导入、转写、审核和文档生成编排成可恢复的桌面 Agent 工作流。
+- **大模型（LLM）**：在线 MiniMax-M3 与本地 Qwen3/llama.cpp 双通道；原始音频、转写和密钥默认留在本机。
+
+> 本节用于说明项目与 AI 的真实关系：已实现能力按现状描述，规划能力明确标注为“后续/尚未实现”。
+<!-- ai-positioning:end -->
